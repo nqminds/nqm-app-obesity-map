@@ -1,0 +1,45 @@
+doctype html
+html
+    head
+        title ObesityMap
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='description', content='Fastfoods near Primary Schools in UK')
+        meta(name='author', content='Bartosz Paszcza, NquiringMinds')
+        link(rel='shortcut icon', href='/favicon.ico')
+        link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,600', rel='stylesheet' type='text/css')
+        link(href='/libs/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+        //link(rel='stylesheet', href='/stylesheets/drawBarChart.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        //link(rel='stylesheet', media="(max-width: 700px)", href='stylesheets/mobile.css')
+        //link(rel='stylesheet', media="(max-width: 700px)", href='stylesheets/mobileBarChart.css')
+
+        script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+        script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false")
+        script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+        script(src="http://d3js.org/topojson.v1.min.js")
+        script(src="http://d3js.org/d3.v3.min.js")
+        script(src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js")
+
+        script(src="/javascripts/buttons.js")
+        script(src="/javascripts/maps.js")
+        script(src="/javascripts/addKey.js")
+        script(src="/javascripts/setMapColours.js")
+        script(src="/javascripts/addMarkers.js")
+
+        script.
+            var oTopoLA = !{JSON.stringify(topoLA)}
+            var oLookUps = !{JSON.stringify(LookUps)};
+            //var oGeoMSOA = !{JSON.stringify(geoMSOA)};
+            var oMSOAData = !{JSON.stringify(msoaData)};
+            var oSchoolsData = !{JSON.stringify(schoolsData)};
+            var oBucket = !{JSON.stringify(indexBucket)}
+
+  body
+        .nqmindsHeader
+            .nqmindsTitle
+                a(href="/") nqminds - schools, fast foods, and obesity
+
+    div(style="margin-top:64px;padding: 4px;")
+        block content

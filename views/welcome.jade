@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+    .modal-header
+        .modal-title
+            h4#welcomeTitle
+    .modal-body#welcomeInfoCanvas
+        h4#welcomeIdTitle
+        p
+            | Note: this is an <b>Alpha Release</b>, which is not optimised for <b>MOBILE PHONES</b>
+        p
+            | This map shows Primary Schools in the UK, along with nearby Fast Food stores and obesity rates for children and adults in the neighbourhood.
+        p
+            | Firstly, choose the County you would like to see the data for. Then, try clicking one of the school's markers that dropped on the map.
+            | The black hamburgers indicate location of nearby fast foods.
+            | For information on the meaning of the colours, click the button 'Legend'.
+        p
+            | Using the dropdown list, pick which schools to display (depending on whether they are located in cities or rural areas) and switch between
+            | displaying obesity rates for children and adults.
+        p
+            | Click the <b>'New map'</b> button to add a second map, enabling you to compare different schools and regions.
+    div(style="text-align: center; font-size: 2em")
+        a(href="/explore") Take me to the Map&nbsp;
+

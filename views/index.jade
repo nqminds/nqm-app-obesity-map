@@ -1,0 +1,80 @@
+extends layout
+
+block content
+
+    #navbar-main
+        button.btn-add-panel.btn.btn-default.btn-header
+            i.glyphicon.glyphicon-plus
+            | Add map&nbsp;
+        button#legendButton.btn.btn-default.center.btn-header
+            | Legend
+        button.btn.btn-default.btn-header.btn.glyphicon.glyphicon-refresh(style="float:right;")
+        a(href='/references', style="float:right;padding-top:15px;padding-right: 4px;") Data Sources
+    div(style="clear:both;")
+    .legendModal.modal.fade
+        .modal-dialog
+            .modal-content#legendContent
+                .modal-header
+                   button.close(type="button",data-dismiss="modal",aria-hidden="true") &times;
+                   .modal-title
+                      h3 Map Key
+                .modal-body#legendCanvas
+                  #obesityLegendContainer
+                    h4 Obesity
+                    br
+                    p Percentage of obese 11 year olds (or obese adults, depending on the choice in the second dropdown list) in the area
+                    br
+                  #indexLegendContainer
+                    hr
+                    h4 Fast Food density around Schools
+                    br
+                    p Index to show density of fast food around given school.
+                    br
+                    p Depending on what you have selected in the first dropdown list, the index shows how the school compares to all other schools in the country, or schools in the rural areas, or in the urban areas only.
+                    br
+                .modal-footer
+    .featureInfo.modal.fade
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    button.close(type="button",data-dismiss="modal",aria-hidden="true") &times;
+                    .modal-title
+                    h4#featureTitle
+                    //h4#featureIdTitle
+                .modal-body#featureInfoCanvas
+                .modal-footer
+                    h5#featureIdTitle
+    #mapGrid
+        #mainPanel.mapGridCell
+            .map-heading
+                span.nqm-panel-close.glyphicon.glyphicon-remove-circle.pull-right
+                span#backButton1.backButton.nqm-panel-close.glyphicon.glyphicon-repeat.pull-right(title="reset")
+                h4#panelTitle1.panel-title
+                    | Click a region to select Local Authority
+                select#indexChoice1.indexDropdown
+                    option(value='total') All Schools Fastfood Density
+                    option(value='rural') Rural Schools Fastfood Density
+                    option(value='urban') Urban Schools Fastfood Density
+                select#obesityAge1.ageDropdown
+                    option(value='11yr') Age 10-11 Child Obesity
+                    option(value='adult') Adult Obesity
+            #mapContainer1.mapContainer
+                #mapCanvas1.mapCanvas
+                .loading
+
+        #initialTemplate.mapGridCell
+            .map-heading
+                span.nqm-panel-close.glyphicon.glyphicon-remove-circle.pull-right
+                span.backButton.nqm-panel-close.glyphicon.glyphicon-repeat.pull-right(title="reset")
+                h4.panel-title
+                    | Click a region to select Local Authority
+                select.indexDropdown
+                    option(value='total') All Schools Fastfood Density
+                    option(value='rural') Rural Schools Fastfood Density
+                    option(value='urban') Urban Schools Fastfood Density
+                select.ageDropdown
+                    option(value='11yr') Age 10-11 Child Obesity
+                    option(value='adult') Adult Obesity
+            .mapContainer
+                .mapCanvas
+                .loading
